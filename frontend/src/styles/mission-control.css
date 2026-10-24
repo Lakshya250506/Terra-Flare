@@ -1,0 +1,306 @@
+/* ==========================================================================
+   AGNI NETRA // THERMAL INTELLIGENCE & DETECTION PLATFORM
+   Professional Light Mode: Scientific GIS & Emergency Intelligence Aesthetic
+   ========================================================================== */
+
+:root {
+  /* Surface & Background - Professional Light Mode */
+  --mc-bg-base: #f8fafc;        /* Slate-50: Clean off-white */
+  --mc-bg-surface: #ffffff;     /* Pure white card backgrounds */
+  --mc-bg-surface-elevated: #f1f5f9; /* Slate-100: Table headers, subtle hover */
+  --mc-bg-surface-high: #e2e8f0;     /* Slate-200: Dividers, borders */
+  
+  /* Borders - Very light subtle grays */
+  --mc-border-subtle: #e2e8f0;
+  --mc-border-active: #cbd5e1;
+  --mc-border-highlight: #3b82f6;
+
+  /* Typography - Crisp dark slate */
+  --mc-text-primary: #0f172a;    /* Slate-900 */
+  --mc-text-secondary: #475569;  /* Slate-600 */
+  --mc-text-muted: #64748b;      /* Slate-500 */
+  --mc-text-dim: #94a3b8;        /* Slate-400 */
+
+  /* Semantic Alert Tokens (Light mode: light background + dark text) */
+  --mc-critical: #dc2626;
+  --mc-critical-bg: #fef2f2;
+  --mc-critical-border: #fecaca;
+  --mc-critical-text: #991b1b;
+
+  --mc-warning: #ea580c;
+  --mc-warning-bg: #fff7ed;
+  --mc-warning-border: #fed7aa;
+  --mc-warning-text: #9a3412;
+
+  --mc-caution: #d97706;
+  --mc-caution-bg: #fffbeb;
+  --mc-caution-border: #fde68a;
+  --mc-caution-text: #92400e;
+
+  --mc-normal: #16a34a;
+  --mc-normal-bg: #f0fdf4;
+  --mc-normal-border: #bbf7d0;
+  --mc-normal-text: #166534;
+
+  --mc-info: #0284c7;
+  --mc-info-bg: #f0f9ff;
+  --mc-info-border: #bae6fd;
+  --mc-info-text: #075985;
+
+  --mc-unknown: #7c3aed;
+  --mc-unknown-bg: #faf5ff;
+  --mc-unknown-border: #e9d5ff;
+  --mc-unknown-text: #5b21b6;
+
+  /* Primary Accent - Professional Blue */
+  --mc-primary: #2563eb;
+  --mc-primary-hover: #1d4ed8;
+  --mc-primary-bg: #eff6ff;
+  --mc-primary-border: #bfdbfe;
+
+  /* Shadows */
+  --mc-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --mc-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  --mc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --mc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
+
+  /* Fonts */
+  --mc-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --mc-font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
+
+  --mc-sidebar-width: 240px;
+  --mc-header-height: 54px;
+}
+
+/* Base resets & layout */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--mc-bg-base);
+  color: var(--mc-text-primary);
+  font-family: var(--mc-font-sans);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.mc-mono {
+  font-family: var(--mc-font-mono) !important;
+}
+
+/* Master Layout */
+.mc-app-shell {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background: var(--mc-bg-base);
+  overflow: hidden;
+}
+
+/* SIDEBAR NAVIGATION */
+.mc-sidebar {
+  width: var(--mc-sidebar-width);
+  background: #ffffff;
+  border-right: 1px solid var(--mc-border-subtle);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 100;
+  transition: width 0.2s ease;
+  box-shadow: var(--mc-shadow-sm);
+}
+
+.mc-sidebar__header {
+  height: var(--mc-header-height);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  border-bottom: 1px solid var(--mc-border-subtle);
+  background: #ffffff;
+}
+
+.mc-sidebar__logo-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2563eb;
+}
+
+.mc-sidebar__title-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.mc-sidebar__app-name {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.mc-sidebar__tagline {
+  font-size: 10px;
+  font-family: var(--mc-font-mono);
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+
+.mc-sidebar__nav {
+  flex: 1;
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  overflow-y: auto;
+}
+
+.mc-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: transparent;
+  border: 1px solid transparent;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-decoration: none;
+}
+
+.mc-nav-item__left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mc-nav-item__icon {
+  font-size: 18px;
+  color: #64748b;
+  transition: color 0.15s ease;
+}
+
+.mc-nav-item:hover {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.mc-nav-item:hover .mc-nav-item__icon {
+  color: #2563eb;
+}
+
+.mc-nav-item.is-active {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.mc-nav-item.is-active .mc-nav-item__icon {
+  color: #2563eb;
+}
+
+.mc-nav-badge {
+  font-family: var(--mc-font-mono);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.mc-nav-badge--danger {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.mc-nav-badge--neutral {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.mc-sidebar__footer {
+  padding: 12px 14px;
+  border-top: 1px solid var(--mc-border-subtle);
+  background: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mc-telemetry-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 8px;
+  background: #ffffff;
+  border: 1px solid var(--mc-border-subtle);
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: var(--mc-font-mono);
+  box-shadow: var(--mc-shadow-sm);
+}
+
+.mc-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #16a34a;
+  box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.2);
+}
+
+/* TOP HEADER */
+.mc-main-viewport {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--mc-bg-base);
+}
+
+.mc-header {
+  height: var(--mc-header-height);
+  background: #ffffff;
+  border-bottom: 1px solid var(--mc-border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 90;
+  flex-shrink: 0;
+  box-shadow: var(--mc-shadow-sm);
+}
+
+.mc-header__left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mc-header__title {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0f172a;
+  margin: 0;
+}
+
+.mc-header__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

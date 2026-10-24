@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+/* ---------- Design tokens (Light Mode) ---------- */
+:root {
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --text-muted: #64748b;
+
+  --fire: #dc2626;
+  --wildfire: #ea580c;
+  --normal: #16a34a;
+  --unknown: #7c3aed;
+  --farm: #ca8a04;
+  --mine: #0891b2;
+
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
+}
+
+/* ---------- Reset & Root Sizing ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+}
+
+/* ---------- Core Layout Containers ---------- */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+
+.sidebar {
+  width: 340px;
+  min-width: 340px;
+  max-width: 340px;
+  height: 100%;
+  background: var(--panel);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  width: calc(100vw - 340px);
+  position: relative;
+  overflow: hidden;
+}
+
+.map-container, .map-area, .map-wrapper, #map {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  min-height: 500px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.leaflet-map, .leaflet-container {
+  height: 100% !important;
+  width: 100% !important;
+  min-height: 500px !important;
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg) !important;
+  z-index: 1;
+}
+
+/* ---------- Map controls: base layer switcher ---------- */
+.layer-switcher {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  z-index: 1000;
+  display: flex;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.layer-switcher__button {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 12px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.layer-switcher__button:hover {
+  color: var(--text);
+}
+
+.layer-switcher__button--active {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  font-weight: 600;
+}
