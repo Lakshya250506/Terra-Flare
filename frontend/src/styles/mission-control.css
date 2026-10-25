@@ -4,24 +4,24 @@
    ========================================================================== */
 
 :root {
-  /* Surface & Background - Professional Light Mode */
-  --mc-bg-base: #f8fafc;        /* Slate-50: Clean off-white */
-  --mc-bg-surface: #ffffff;     /* Pure white card backgrounds */
-  --mc-bg-surface-elevated: #f1f5f9; /* Slate-100: Table headers, subtle hover */
-  --mc-bg-surface-high: #e2e8f0;     /* Slate-200: Dividers, borders */
+  /* Surface & Background - Simple Cool Gray Palette */
+  --mc-bg-base: #e5e7eb;             /* Replaced #f8fafc with simple gray */
+  --mc-bg-surface: #ffffff;          /* Pure white card backgrounds */
+  --mc-bg-surface-elevated: #f3f4f6; /* Gray-100 for subtle hover */
+  --mc-bg-surface-high: #d1d5db;     /* Gray-300 for dividers/borders */
   
-  /* Borders - Very light subtle grays */
-  --mc-border-subtle: #e2e8f0;
-  --mc-border-active: #cbd5e1;
+  /* Borders */
+  --mc-border-subtle: #d1d5db;
+  --mc-border-active: #9ca3af;
   --mc-border-highlight: #3b82f6;
 
-  /* Typography - Crisp dark slate */
-  --mc-text-primary: #0f172a;    /* Slate-900 */
-  --mc-text-secondary: #475569;  /* Slate-600 */
-  --mc-text-muted: #64748b;      /* Slate-500 */
-  --mc-text-dim: #94a3b8;        /* Slate-400 */
+  /* Typography */
+  --mc-text-primary: #0f172a;    
+  --mc-text-secondary: #475569;  
+  --mc-text-muted: #64748b;      
+  --mc-text-dim: #94a3b8;        
 
-  /* Semantic Alert Tokens (Light mode: light background + dark text) */
+  /* Semantic Alert Tokens (Unchanged) */
   --mc-critical: #dc2626;
   --mc-critical-bg: #fef2f2;
   --mc-critical-border: #fecaca;
@@ -52,22 +52,21 @@
   --mc-unknown-border: #e9d5ff;
   --mc-unknown-text: #5b21b6;
 
-  /* Primary Accent - Professional Blue */
+  /* Primary Accent */
   --mc-primary: #2563eb;
   --mc-primary-hover: #1d4ed8;
   --mc-primary-bg: #eff6ff;
   --mc-primary-border: #bfdbfe;
 
-  /* Shadows */
+  /* Shadows (Unchanged) */
   --mc-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --mc-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
   --mc-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
   --mc-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
 
-  /* Fonts */
+  /* Fonts & Sizing (Unchanged) */
   --mc-font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --mc-font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
-
   --mc-sidebar-width: 240px;
   --mc-header-height: 54px;
 }
@@ -303,4 +302,18 @@ body, html {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+body.dark-theme {
+  --mc-bg-base: #0f172a;
+  --mc-bg-surface: #1e293b;
+  --mc-bg-surface-elevated: #334155;
+  --mc-bg-surface-high: #475569;
+  --mc-border-subtle: #334155;
+  --mc-text-primary: #f8fafc;
+  --mc-text-secondary: #cbd5e1;
+  --mc-text-muted: #94a3b8;
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --text: #f8fafc;
+  --border: #334155;
 }

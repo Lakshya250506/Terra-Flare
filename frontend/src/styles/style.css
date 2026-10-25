@@ -2,9 +2,10 @@
 
 /* ---------- Design tokens (Light Mode) ---------- */
 :root {
-  --bg: #f8fafc;
+  /* Changed from #f8fafc to a simple solid cool gray */
+  --bg: #e5e7eb;
   --panel: #ffffff;
-  --border: #e2e8f0;
+  --border: #d1d5db;
   --text: #0f172a;
   --text-muted: #64748b;
 
